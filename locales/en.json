@@ -1,6 +1,7 @@
 {
     "ui": {
-      "title": "Card Fusion Probabilities Calculator",
+      "title": "GC Card",
+      "webTitle": "Card Fusion Probabilities Calculator",      
       "group": "Group",
       "points": "Points",
       "rate": "Rate",

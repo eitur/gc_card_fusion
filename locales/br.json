@@ -1,6 +1,7 @@
 {
     "ui": {
-      "title": "Calculadora de Probabilidades de Fusão de Cartas",
+      "Title": "GC Carta",
+      "webTitle": "Calculadora de Probabilidades de Fusão de Cartas",
       "group": "Grupo",
       "points": "Pontos",
       "rate": "Taxa",
