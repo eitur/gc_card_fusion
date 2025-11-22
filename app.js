@@ -319,11 +319,11 @@ function toggleTheme() {
   
   // Update icon
   if (body.classList.contains('dark-mode')) {
-    themeIcon.src = '../images/theme/light-mode.png'
+    themeIcon.src = `${window.BASE_PATH}/images/theme/light-mode.png`;
     themeIcon.alt = 'Light Mode';
     localStorage.setItem('theme', 'dark');
   } else {
-    themeIcon.src = '../images/theme/dark-mode.png'
+    themeIcon.src = `${window.BASE_PATH}/images/theme/dark-mode.png`;
     themeIcon.alt = 'Dark Mode';
     localStorage.setItem('theme', 'light');
   }
@@ -337,12 +337,12 @@ function loadTheme() {
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
     if (themeIcon) {
-      themeIcon.src = '../images/theme/light-mode.png';
+      themeIcon.src = `${window.BASE_PATH}/images/theme/light-mode.png`;
       themeIcon.alt = 'Light Mode';
     }
   } else {
     if (themeIcon) {
-      themeIcon.src = '../images/theme/dark-mode.png';
+      themeIcon.src = `${window.BASE_PATH}/images/theme/dark-mode.png`;
       themeIcon.alt = 'Dark Mode';
     }
   }
