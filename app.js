@@ -1,5 +1,5 @@
 const isGitHubPages = window.location.hostname.includes('github.io');
-const BASE_PATH = isGitHubPages ? '/gc-card-fusion' : '';
+const BASE_PATH = isGitHubPages ? '/gc-card' : '';
 
 function getLangUrl(lang) {
   if (lang === 'en') {
@@ -113,9 +113,9 @@ function renderTable() {
   }
 
   document.getElementById("cardTable").innerHTML = list.map(c => `
-    <tr>
+    <tr class="card-row" onclick="toggleRow(${c.id}, event)">
       <td><input type="checkbox" ${selected.has(c.id) ? "checked" : ""} 
-          onclick="toggle(${c.id})"></td>
+          onclick="event.stopPropagation(); toggle(${c.id})"></td>
       <td>
         <div class='card-pic' 
              data-src='${imageBasePath}/${c.image}'
@@ -146,6 +146,22 @@ function toggle(id) {
   selected.has(id) ? selected.delete(id) : selected.add(id);
   saveSelections();
   updateSummary();
+}
+
+// New function to handle row clicks
+function toggleRow(id, event) {
+  // Don't toggle if clicking on the checkbox itself (handled by its own onclick)
+  if (event.target.type === 'checkbox') {
+    return;
+  }
+  
+  toggle(id);
+  
+  // Update the checkbox state
+  const checkbox = event.currentTarget.querySelector('input[type="checkbox"]');
+  if (checkbox) {
+    checkbox.checked = selected.has(id);
+  }
 }
 
 function resetCards() {
