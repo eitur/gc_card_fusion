@@ -537,3 +537,246 @@ input[type="checkbox"]:checked::after {
     box-shadow: none;
   }
 }
+
+/* ============================================
+   DARK MODE TOGGLE BUTTON
+   ============================================ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;  /* Match other buttons */
+  height: auto;       /* Let padding control height */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.theme-icon {
+  width: 18px;   /* Adjust size as needed */
+  height: 18px;  /* Adjust size as needed */
+  display: block;
+  transition: transform 0.3s;
+}
+
+
+/* ============================================
+   DARK MODE STYLES
+  ============================================ */
+
+body.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode h1 {
+  color: #e0e0e0;
+}
+
+/* Top right buttons */
+body.dark-mode .lang-btn,
+body.dark-mode .help-btn,
+body.dark-mode .theme-toggle {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+body.dark-mode .lang-btn:hover,
+body.dark-mode .help-btn:hover,
+body.dark-mode .theme-toggle:hover {
+  background: #383838;
+}
+
+body.dark-mode .lang-btn.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+/* Top panel */
+body.dark-mode .top-panel {
+  background: #2d2d2d;
+  border-color: #404040;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode #summaryText {
+  color: #e0e0e0;
+}
+
+body.dark-mode .details-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+body.dark-mode .details-btn:hover {
+  background: #45a049;
+}
+
+/* Toolbar */
+body.dark-mode .toolbar {
+  background: #2d2d2d;
+  border-color: #404040;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .controls button {
+  background: #383838;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+body.dark-mode .controls button:hover {
+  background: #454545;
+  border-color: #555;
+}
+
+body.dark-mode .filters {
+  color: #e0e0e0;
+}
+
+body.dark-mode .filters select {
+  background: #383838;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+body.dark-mode .search-box input {
+  background: #383838;
+  color: #e0e0e0;
+  border-color: #404040;
+}
+
+body.dark-mode .search-box input::placeholder {
+  color: #b0b0b0;
+}
+
+body.dark-mode .search-box input:focus {
+  border-color: #4CAF50;
+}
+
+body.dark-mode .search-icon {
+  color: #888;
+}
+
+/* Table */
+body.dark-mode table {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode th {
+  background: #383838;
+  color: #e0e0e0;
+  border-bottom-color: #404040;
+}
+
+body.dark-mode td {
+  color: #e0e0e0;
+  border-bottom-color: #353535;
+}
+
+body.dark-mode .sortable:hover {
+  background: #404040;
+}
+
+body.dark-mode tbody tr:hover {
+  background: #333333;
+}
+
+/* Card images in dark mode */
+body.dark-mode .card-pic:not(.loaded) {
+  background: linear-gradient(135deg, #404040 0%, #2d2d2d 100%);
+}
+
+body.dark-mode .card-pic {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .card-pic:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .card-pic.error {
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+}
+
+/* Checkbox in dark mode */
+body.dark-mode input[type="checkbox"] {
+  background: #383838;
+  border-color: #555;
+}
+
+body.dark-mode input[type="checkbox"]:hover {
+  border-color: #4CAF50;
+}
+
+body.dark-mode input[type="checkbox"]:checked {
+  background: #4CAF50;
+  border-color: #4CAF50;
+}
+
+/* Modal */
+body.dark-mode .modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .modal-content {
+  background-color: #2d2d2d;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .modal-content h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .close {
+  color: #888;
+}
+
+body.dark-mode .close:hover,
+body.dark-mode .close:focus {
+  color: #e0e0e0;
+}
+
+body.dark-mode .missing-summary {
+  background: #383838;
+  border-left-color: #4CAF50;
+}
+
+body.dark-mode #helpContent,
+body.dark-mode #detailsContent {
+  color: #e0e0e0;
+}
+
+body.dark-mode .no-cards {
+  color: #777;
+}
+
+body.dark-mode #detailsContent .card-item {
+  background: #383838;
+  border-left-color: #4CAF50;
+}
+
+body.dark-mode #detailsContent .card-item strong {
+  color: #e0e0e0;
+}
+
+/* Sort indicators in dark mode */
+body.dark-mode .sort-indicator {
+  color: #888;
+}
+
+body.dark-mode .sort-indicator.asc::after,
+body.dark-mode .sort-indicator.desc::after {
+  color: #4CAF50;
+}

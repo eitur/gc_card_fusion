@@ -310,6 +310,49 @@ window.onclick = function(event) {
   }
 }
 
+// Dark mode toggle functionality
+function toggleTheme() {
+  const body = document.body;
+  const themeIcon = document.querySelector('.theme-icon');
+  
+  body.classList.toggle('dark-mode');
+  
+  // Update icon
+  if (body.classList.contains('dark-mode')) {
+    themeIcon.src = '../images/theme/light-mode.png'
+    themeIcon.alt = 'Light Mode';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    themeIcon.src = '../images/theme/dark-mode.png'
+    themeIcon.alt = 'Dark Mode';
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Load saved theme on page load
+function loadTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const themeIcon = document.querySelector('.theme-icon');
+  
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeIcon) {
+      themeIcon.src = '../images/theme/light-mode.png';
+      themeIcon.alt = 'Light Mode';
+    }
+  } else {
+    if (themeIcon) {
+      themeIcon.src = '../images/theme/dark-mode.png';
+      themeIcon.alt = 'Dark Mode';
+    }
+  }
+}
+
+// Call loadTheme immediately when script loads
+document.addEventListener('DOMContentLoaded', () => {
+  loadTheme();
+});
+
 async function initApp() {
   await i18n.init();
   await loadCards();
