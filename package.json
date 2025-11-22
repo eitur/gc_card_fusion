@@ -1,0 +1,6 @@
+{
+  "name": "card-fusion-calculator",
+  "scripts": {
+    "build": "node src/build.js"
+  }
+}
